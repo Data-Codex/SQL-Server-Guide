@@ -62,5 +62,3 @@ Normalization: 🏗️ Organize data efficiently, eliminating redundancy.
 👉 Subscribe to Data Codex on YouTube for engaging video tutorials and stay updated on the latest in the world of data!
 
 🚀 Ready to embark on your SQL journey? Let's dive in and unlock the potential of your data!
-
-SQL-Server-Guide/README.md at main ·
