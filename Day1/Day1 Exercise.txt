@@ -1,0 +1,7 @@
+--Tasks
+
+1. Create a Database name Sales
+2. Rename the Database to SalesDB
+3. Create a Schema sales
+4. Create a User and assign permissions
+5. Drop the Database
