@@ -1,0 +1,9 @@
+Day2 Exercise
+
+1. Create a Employee table with id, name, age columns were none of the column should allow NULL values
+2. Create a Table tbl_Employee using SSMS Designer
+3. Create a Table Customer using the table Employee without copying the Record
+4. Create a Global temp table Customer Details and open new session and create a temp table Employee
+under a schema Training and insert the values
+5. Create a Database SampleDB and then Craete a table demo.employee and rename it to Customer
+6. Drop all the Schemas, Tables and Databases.
