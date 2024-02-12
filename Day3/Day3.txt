@@ -1,0 +1,8 @@
+Day3 Exercise
+
+1. Craete  a table with your table name with identity using the Designer in SQL Server
+2. Insert 10 rows for that table using query
+3. Create another table using Query without Identity
+4. Insert 2 rows into the table created in qn3 using designer
+5. Insert all the rows from table created in qn1 into this table using Insert into select statement
+6. Checkout all the Datatypes in your table and findout the difference
