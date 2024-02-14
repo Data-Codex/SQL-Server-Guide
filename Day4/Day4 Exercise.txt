@@ -1,0 +1,57 @@
+Day4 Exercise:
+
+Primary Key:
+
+Table Creation and Insertion:
+
+1.Create a table named Employees with columns: EmployeeID (Primary Key), Name, Age, DepartmentID.
+2.Insert some sample data into the Employees table.
+
+Data Retrieval:
+
+1.Write a query to retrieve all records from the Employees table.
+2.Write a query to retrieve details of an employee with a specific EmployeeID.
+3.Write a query to find the number of employees in each department.
+
+Data Manipulation:
+
+1.Attempt to insert a new employee with a duplicate EmployeeID. Observe the error message.
+2.Attempt to update the EmployeeID of an existing employee. Observe the error message.
+3.Attempt to delete an employee with a specific EmployeeID.
+
+Foreign Key:
+
+Table Creation and Insertion:
+
+1.Create a table named Departments with columns: DepartmentID (Primary Key), Name.
+2.Insert some sample data into the Departments table.
+3.Alter the Employees table to add a Foreign Key constraint referencing the DepartmentID column of the Departments table.
+
+Data Retrieval:
+
+1.Write a query to retrieve all employees along with their department names.
+2.Write a query to find employees who belong to a specific department.
+
+Data Manipulation:
+
+1.Attempt to insert a new employee with a non-existent DepartmentID. Observe the error message.
+2.Attempt to update the DepartmentID of an existing employee to a non-existent value. Observe the error message.
+3.Attempt to delete a department that still has employees associated with it.
+
+Default Constraint:
+
+Table Creation and Insertion:
+
+1.Create a table named Students with columns: StudentID (Primary Key), Name, Age with a default constraint of 18 for Age.
+2.Insert some sample data into the Students table without specifying the Age.
+
+Data Retrieval:
+
+1.Write a query to retrieve all records from the Students table.
+2.Write a query to find students whose age is 18.
+
+Data Manipulation:
+
+1.Attempt to insert a new student without specifying the Age.
+2.Attempt to update the Age of an existing student to a NULL value. Observe the behavior of the default constraint.
+3.Attempt to insert a new student with a specific Age value.
