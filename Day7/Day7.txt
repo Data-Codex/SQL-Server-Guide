@@ -1,0 +1,75 @@
+Day7 Exercise:
+
+
+--Table Creation Script:
+
+CREATE TABLE ProductSales (
+    SaleID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    UnitsSold INT,
+    UnitPrice DECIMAL(10, 2),
+    TotalSalesAmount DECIMAL(10, 2)
+);
+
+
+
+--Insert Statements:
+
+INSERT INTO ProductSales (SaleID, ProductName, UnitsSold, UnitPrice, TotalSalesAmount)
+VALUES (1, 'Laptop', 10, 800.00, 8000.00),
+       (2, 'Phone', 20, 500.00, 10000.00),
+       (3, 'Tablet', 15, 300.00, 4500.00),
+       (4, 'Desktop', 8, 1200.00, 9600.00),
+       (5, 'Smartwatch', 30, 200.00, 6000.00),
+       (6, 'Printer', 12, 300.00, 3600.00),
+       (7, 'Headphones', 25, 50.00, 1250.00),
+       (8, 'Keyboard', 20, 60.00, 1200.00),
+       (9, 'Monitor', 10, 400.00, 4000.00),
+       (10, 'Speaker', 15, 100.00, 1500.00),
+       (11, 'Mouse', 18, 20.00, 360.00),
+       (12, 'External Hard Drive', 22, 150.00, 3300.00),
+       (13, 'Router', 8, 120.00, 960.00),
+       (14, 'Software', 5, 100.00, 500.00),
+       (15, 'Webcam', 7, 80.00, 560.00);
+
+
+Problem 1: Performance Bonus Calculation:
+
+Calculate the total sales amount for each product and determine the performance bonus for salespersons based on the total sales amount. For sales over $10,000, provide a bonus of 5% of the total sales amount.
+
+Problem 2: Inventory Replenishment:
+
+Identify products with fewer than 50 units in stock and order additional units to replenish the inventory. Determine the total cost of replenishing the inventory for each product based on the unit price and the required quantity to reach the target inventory level of 100 units.
+
+Problem 3: Sales Forecasting:
+
+Predict the total sales amount for the upcoming quarter by analyzing the historical sales data. Calculate the average monthly sales amount for each product over the past year and project the total sales amount for the next three months based on the average monthly sales.
+
+Problem 4: Profit Margin Analysis:
+
+Calculate the profit margin for each product by subtracting the cost of goods sold (COGS) from the total sales amount and dividing the result by the total sales amount. Identify products with a profit margin of less than 20% and analyze the factors contributing to the low profit margin.
+
+Problem 5: Commission Calculation:
+
+Calculate the total commission earned by salespersons based on the total sales amount. Provide a commission of 3% for sales over $5000.
+
+Problem 6: Inventory Management:
+
+Identify products with fewer than 10 units in stock and prioritize them for restocking. Determine the total cost of restocking the inventory for these products.
+
+Problem 7: Customer Loyalty Program:
+
+Analyze customer purchase history to identify customers who have made more than 3 purchases in the past month. Offer these customers a special discount of 10% on their next purchase.
+
+Problem 8: Sales Territory Analysis:
+
+Determine the total sales amount for each sales territory based on the sales of individual products. Identify the top-performing sales territories and analyze factors contributing to their success.
+
+Problem 9: Price Adjustment Strategy:
+
+Analyze sales data to identify products with declining sales trends. Propose a price adjustment strategy to increase sales for these products without sacrificing profitability.
+
+Problem 10: Sales Forecasting:
+
+Predict the total sales amount for the next quarter by analyzing historical sales data and seasonal trends. Use regression analysis to forecast sales based on past performance and external factors such as economic indicators and marketing campaigns.
+
