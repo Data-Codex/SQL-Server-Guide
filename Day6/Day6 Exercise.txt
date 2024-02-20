@@ -1,4 +1,4 @@
-Day6 Exercise:
+--Day6 Exercise:
 
 1. Creating Tables with Identity Columns:
    Create a table that stores customer information. Include an identity column as the primary key.
