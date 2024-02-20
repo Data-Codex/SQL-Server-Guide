@@ -1,4 +1,4 @@
-Day3 Exercise
+--Day3 Exercise
 
 1. Craete  a table with your table name with identity using the Designer in SQL Server
 2. Insert 10 rows for that table using query
