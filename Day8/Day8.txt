@@ -1,0 +1,97 @@
+Day 7 Exercise:
+
+-- Creating Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2),
+    HireDate DATE
+);
+
+-- Inserting sample data
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary, HireDate)
+VALUES 
+    (1, 'John', 'Doe', 'HR', 50000.00, '2020-01-15'),
+    (2, 'Jane', 'Smith', 'IT', 60000.00, '2019-05-20'),
+    (3, 'Alice', 'Johnson', 'Finance', 55000.00, '2021-02-10'),
+    (4, 'Bob', 'Williams', 'IT', 65000.00, '2020-11-30'),
+    (5, 'Emily', 'Brown', 'HR', 52000.00, '2022-03-25'),
+    (6, 'Michael', 'Johnson', 'Finance', 62000.00, '2023-07-12'),
+    (7, 'Jessica', 'Lee', NULL, 48000.00, '2022-09-05'),
+    (8, 'Daniel', 'Anderson', 'IT', 55000.00, '2020-04-28'),
+    (9, 'Sophia', 'Garcia', 'Sales', 58000.00, '2021-11-15'),
+    (10, 'William', 'Martinez', 'Sales', 54000.00, '2022-08-20'),
+    (11, 'Olivia', 'Lopez', 'HR', 51000.00, '2021-06-30'),
+    (12, 'Ethan', 'Harris', 'IT', 63000.00, '2023-01-10'),
+    (13, 'Ava', 'Clark', 'Finance', 58000.00, '2020-03-18'),
+    (14, 'James', 'King', 'IT', 59000.00, '2021-04-05'),
+    (15, 'Amelia', 'Young', 'HR', 60000.00, '2022-10-25'),
+    (16, 'Logan', 'Taylor', 'Sales', 57000.00, '2023-05-15'),
+    (17, 'Mia', 'White', 'IT', 56000.00, '2021-09-08'),
+    (18, 'Benjamin', 'Scott', 'Finance', 64000.00, '2022-02-18'),
+    (19, 'Charlotte', 'Green', 'IT', 52000.00, '2020-07-22'),
+    (20, 'Lucas', 'Adams', 'Sales', 60000.00, '2023-02-28');
+
+Based on the given table solve the following questions:
+
+1. AND Operator:
+   - Retrieve all employees who work in the HR department and have a salary greater than or equal to 55000.
+   - Find employees who were hired after '2021-01-01' and have a salary less than 60000.
+
+2. OR Operator:
+   - Get all employees who work in either the HR department or the IT department.
+   - Find employees who either have a salary greater than 60000 or were hired before '2022-01-01'.
+
+3. NOT Operator:
+   - Retrieve all employees who do not work in the Sales department.
+   - Find employees who were not hired in the year 2020.
+
+4. ANY Operator:
+   - Find employees whose salary is greater than the maximum salary in the IT department.
+   - Get all employees who have a salary greater than the minimum salary in the Finance department.
+
+5. ALL Operator:
+   - Retrieve employees who have a salary greater than all employees in the HR department.
+   - Find employees who have a salary less than or equal to all employees in the Sales department.
+
+6. IS NULL Operator:
+   - Retrieve employees whose department is not assigned (i.e., department is NULL).
+   - Find employees who have no salary specified (i.e., salary is NULL).
+
+7. LIKE Operator:
+   - Get all employees whose last name starts with 'S'.
+   - Retrieve employees whose first name contains 'an'.
+
+8. IN Operator:
+   - Find employees who work in either the HR or IT department.
+   - Retrieve employees whose salary is either 52000 or 60000.
+
+9. BETWEEN Operator:
+   - Get all employees whose salary is between 55000 and 65000.
+   - Retrieve employees who were hired between '2021-01-01' and '2022-01-01'.
+
+10. UNION Operator:
+    - Get a list of all unique first names and last names of employees.
+    - Retrieve a list of all unique department names along with their respective salaries.
+
+11. INTERSECT Operator:
+    - Find common first names among employees and last names of employees.
+    - Retrieve common department names between employees and department names in the 'Departments' table.
+
+12. EXCEPT Operator:
+    - Retrieve first names of employees that are not also last names of employees.
+    - Get department names of employees that are not found in the 'Departments' table.
+
+13. CASE Operator:
+    - Create a query to categorize employees based on their salary as 'High', 'Medium', or 'Low'.
+    - Categorize employees based on their hire date as 'Recent' if hired after '2022-01-01', otherwise 'Old'.
+
+14. IIF Operator:
+    - Rewrite the query to categorize employees based on their salary using the IIF function.
+    - Categorize employees based on their department as 'IT' if salary is greater than 60000, 'Finance' if between 55000 and 60000, otherwise 'Other'.
+
+15. COALESCE Function:
+    - Retrieve a list of employee departments, replacing any NULL values with 'No Department'.
+    - Find employees' last names, replacing any NULL values with 'Unknown'.
