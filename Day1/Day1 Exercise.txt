@@ -1,4 +1,4 @@
---Tasks
+--Day1 Exercise
 
 1. Create a Database name Sales
 2. Rename the Database to SalesDB
