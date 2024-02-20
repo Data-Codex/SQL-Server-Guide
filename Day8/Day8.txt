@@ -1,4 +1,4 @@
-Day 8 Exercise:
+--Day 8 Exercise:
 
 -- Creating Employees table
 CREATE TABLE Employees (
