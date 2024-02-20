@@ -1,4 +1,4 @@
-Day2 Exercise
+--Day2 Exercise
 
 1. Create a Employee table with id, name, age columns were none of the column should allow NULL values
 2. Create a Table tbl_Employee using SSMS Designer
