@@ -1,0 +1,58 @@
+Day9 Exercise:
+ 
+-- Table Creation Script
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,
+    ProductName VARCHAR(50),
+    UnitsSold INT,
+    UnitPrice DECIMAL(10, 2),
+    TotalSalesAmount DECIMAL(10, 2),
+    SaleDate DATE
+);
+
+-- Insert Statements
+INSERT INTO Sales (SaleID, ProductName, UnitsSold, UnitPrice, TotalSalesAmount, SaleDate)
+VALUES 
+    (1, 'Laptop', 10, 800.00, 8000.00, '2023-01-15'),
+    (2, 'Phone', 20, 500.00, 10000.00, '2023-01-16'),
+    (3, 'Tablet', 15, 300.00, 4500.00, '2023-01-17'),
+    (4, 'Printer', 5, 200.00, 1000.00, '2023-01-18'),
+    (5, 'Monitor', 8, 400.00, 3200.00, '2023-01-19'),
+    (6, 'Keyboard', 12, 50.00, 600.00, '2023-01-20'),
+    (7, 'Mouse', 25, 20.00, 500.00, '2023-01-21'),
+    (8, 'Headphones', 18, 30.00, 540.00, '2023-01-22'),
+    (9, 'Speaker', 7, 100.00, 700.00, '2023-01-23'),
+    (10, 'USB Drive', 30, 10.00, 300.00, '2023-01-24'),
+    (11, 'External HDD', 3, 150.00, 450.00, '2023-01-25'),
+    (12, 'Webcam', 4, 80.00, 320.00, '2023-01-26'),
+    (13, 'Microphone', 6, 70.00, 420.00, '2023-01-27'),
+    (14, 'Printer Paper', 40, 5.00, 200.00, '2023-01-28'),
+    (15, 'Ink Cartridge', 15, 30.00, 450.00, '2023-01-29'),
+    (16, 'Desk Lamp', 9, 25.00, 225.00, '2023-01-30'),
+    (17, 'Power Strip', 10, 15.00, 150.00, '2023-01-31'),
+    (18, 'Desk Organizer', 3, 40.00, 120.00, '2023-02-01'),
+    (19, 'Whiteboard', 2, 100.00, 200.00, '2023-02-02'),
+    (20, 'Stapler', 8, 15.00, 120.00, '2023-02-03');
+
+
+-- Real-World Problems
+1. Calculate the total number of units sold across all products.
+2. Find the average unit price of the products.
+3. Determine the total sales amount for each product.
+4. Identify the product with the highest total sales amount.
+5. Find the product name with the maximum unit price.
+6. Calculate the total revenue generated from sales.
+7. Find the product name with the minimum unit price.
+8. Determine the total sales amount for products with more than 10 units sold.
+9. Calculate the total sales amount for products with a unit price greater than $50.
+10. Identify the product with the lowest total sales amount.
+11. Calculate the total revenue generated from sales, considering a 10% discount on the total sales amount for products with more than 15 units sold.
+12. Determine the top 3 best-selling products based on the total number of units sold.
+13. Identify the product name with the highest average unit price among products that have sold more than 10 units.
+14. Find the total sales amount for products sold in the last quarter of the year (October to December).
+15. Calculate the total sales amount for products where the product name contains the word "electronics" (case insensitive).
+16. Determine the product name with the highest percentage increase in unit price compared to the previous year.
+17. Find the total sales amount for products where the unit price is within 10% of the average unit price across all products.
+18. Identify the product name with the highest total sales amount per unit price (total sales amount divided by unit price).
+19. Calculate the total sales amount for products sold on weekdays (Monday to Friday).
+20. Determine the product name with the highest total sales amount per day on average (total sales amount divided by the number of days the product was sold).
