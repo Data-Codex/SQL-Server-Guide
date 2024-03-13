@@ -1,0 +1,71 @@
+Day15 Exercise
+
+--Create table and Insert Quires
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES
+    (1, 'John', 'Doe', 'Sales', 60000.00),
+    (2, 'Jane', 'Smith', 'Marketing', 70000.00),
+    (3, 'Alice', 'Johnson', 'Finance', 80000.00),
+    (4, 'Bob', 'Brown', 'Sales', 55000.00),
+    (5, 'Emily', 'Davis', 'Marketing', 65000.00),
+    (6, 'Michael', 'Wilson', 'IT', 90000.00),
+    (7, 'Sophia', 'Martinez', 'HR', 50000.00),
+    (8, 'William', 'Taylor', 'Finance', 75000.00),
+    (9, 'Olivia', 'Anderson', 'IT', 85000.00),
+    (10, 'James', 'Garcia', 'Sales', 62000.00);
+
+--Solve the following Questions:
+
+1. Query 1: Retrieve the top 3 highest paid employees.
+
+Query 2: Retrieve the next 5 employees after the top 3 highest paid employees,
+ ordered by salary in descending order.
+
+Query 3: Retrieve the top 3 lowest paid employees in the Sales department.
+
+Query 4: Retrieve the next 5 employees after the top 3 lowest paid employees 
+in the Finance department, ordered by salary in ascending order.
+
+Query 5: Retrieve the top 3 highest paid employees in the IT department, excluding 
+those with a salary greater than $80000.
+
+Query 6: Retrieve the next 5 employees after the top 3 highest paid employees in 
+the Marketing department, excluding those with a salary less than $65000.
+
+Query 7: Retrieve the top 3 highest paid employees in the HR department, excluding 
+those with a salary less than $60000 and more than $70000.
+
+Query 8: Retrieve the next 5 employees after the top 3 highest paid employees in 
+the Sales department, excluding those with a salary less than $60000 and more than 
+$65000, ordered by salary in descending order.
+
+Query 9: Retrieve the top 3 lowest paid employees in the Finance department, 
+excluding those with a salary less than $75000.
+
+Query 10: Retrieve the next 5 employees after the top 3 lowest paid employees 
+in the IT department, excluding those with a salary greater than $85000, ordered 
+by salary in ascending order.
+
+Query 11: Retrieve the top 3 highest paid employees in each department, ordered 
+by department name and then by salary in descending order.
+
+Query 12: Retrieve the next 5 employees after the top 3 highest paid employees 
+in each department, ordered by department name and then by salary in descending order.
+
+Query 13: Retrieve the top 3 lowest paid employees in each department, ordered 
+by department name and then by salary in ascending order.
+
+Query 14: Retrieve the next 5 employees after the top 3 lowest paid employees 
+in each department, ordered by department name and then by salary in ascending order.
+
+Query 15: Retrieve the top 3 highest paid employees among those who joined the 
+company in the last 2 years, ordered by salary in descending order.
