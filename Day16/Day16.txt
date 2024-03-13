@@ -1,0 +1,58 @@
+Day 16 Exercise
+
+--Create table and Insert Values
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary DECIMAL(10, 2),
+    JoinDate DATE DEFAULT GETDATE()
+);
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES
+    (1, 'John', 'Doe', 'Sales', 60000.00),
+    (2, 'Jane', NULL, 'Marketing', 70000.00),
+    (3, 'Alice', 'Johnson', NULL, 80000.00),
+    (4, NULL, 'Brown', 'Sales', NULL),
+    (5, 'Emily', 'Davis', 'Marketing', NULL),
+    (6, 'Michael', 'Wilson', 'IT', 90000.00),
+    (7, 'Sophia', 'Martinez', 'HR', NULL),
+    (8, 'William', 'Taylor', NULL, 75000.00),
+    (9, 'Olivia', 'Anderson', 'IT', 85000.00),
+    (10, 'James', 'Garcia', 'Sales', 62000.00);
+
+
+--Solve the Questions
+
+
+Query 1: Retrieve the count of employees with NULL last names.
+
+Query 2: Retrieve the total salary of employees in each department, 
+replacing NULL salaries with 0.
+
+Query 3: Retrieve the average salary of employees in the Sales department, 
+replacing NULL salaries with the overall average salary.
+
+Query 4: Retrieve the join date of employees with NULL join dates, 
+replacing them with the earliest join date in the company.
+
+Query 5: Retrieve the full name of employees, replacing NULL first names 
+with 'Unknown' and NULL last names with 'Anonymous'.
+
+Query 6: Retrieve the total number of employees in each department, 
+replacing NULL departments with 'Unknown'.
+
+Query 7: Retrieve the department with the highest average salary, 
+replacing NULL salaries with the overall average salary.
+
+Query 8: Retrieve the percentage of employees with NULL salaries compared 
+to the total number of employees.
+
+Query 9: Retrieve the oldest employee's join date, replacing NULL join 
+dates with the earliest join date in the company.
+
+Query 10: Retrieve the department with the highest number of employees, 
+replacing NULL departments with 'Unknown'.
