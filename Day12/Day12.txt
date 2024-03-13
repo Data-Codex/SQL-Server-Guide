@@ -1,0 +1,61 @@
+Day12 Exercise:
+
+--Table Creation Script
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerName NVARCHAR(100),
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2)
+);
+
+--Insert these Quires
+
+INSERT INTO Orders (OrderID, CustomerName, OrderDate, TotalAmount)
+VALUES
+    (1, 'John Doe', '2024-03-14', 100.00),
+    (2, 'Jane Smith', '2024-03-15', 150.00),
+    (3, 'Alice Johnson', '2024-03-16', 200.00),
+    (4, 'Bob Brown', '2024-03-17', 120.00),
+    (5, 'David Lee', '2024-03-19', 180.00),
+    (6, 'Emily White', '2024-03-20', 220.00),
+    (7, 'Michael Johnson', '2024-03-21', 300.00),
+    (8, 'Sarah Brown', '2024-03-22', 150.00),
+    (9, 'Chris Wilson', '2024-03-23', 280.00),
+    (10, 'Jessica Anderson', '2024-03-24', 190.00),
+    (11, 'Ryan Martinez', '2024-03-25', 210.00),
+    (12, 'Amanda Taylor', '2024-03-26', 260.00),
+    (13, 'Daniel Hernandez', '2024-03-27', 170.00),
+    (14, 'Rachel Lopez', '2024-03-28', 230.00),
+    (15, 'Tyler King', '2024-03-29', 195.00),
+    (16, 'Olivia Adams', '2024-03-30', 280.00),
+    (17, 'William Thomas', '2024-03-31', 240.00),
+    (18, 'Ella Clark', '2024-04-01', 210.00),
+    (19, 'Nathan Walker', '2024-04-02', 185.00),
+    (20, 'Sophia Hill', '2024-04-03', 300.00);
+
+
+--Solve the Following Questions:
+
+1.Retrieve the total number of orders in the database.
+2.Find the order with the highest total amount.
+3.List all orders placed on March 15, 2024.
+4.Calculate the total amount spent by the customer "John Doe".
+5.Retrieve the order details for OrderID 3.
+6.Update the total amount of OrderID 2 to 175.00.
+7.Insert a new order for "Mary Johnson" placed on March 18, 2024, with a total amount of 250.00.
+8.Delete the order with OrderID 4.
+9.Attempt to insert a new order with a duplicate OrderID.
+10.Attempt to update the total amount of an order that does not exist (e.g., OrderID 10).
+
+
+1.Imagine you're tasked with updating the total amount of an order and inserting a new order for a customer. How would you ensure that if either of these operations fails, the database remains in a consistent state?
+
+2.Suppose you need to perform multiple operations on the Orders table within a single transaction. How would you handle any errors that occur during these operations to ensure the integrity of the data?
+
+3.You're required to implement a feature where if an order update fails midway, you should be able to roll back to a certain point and continue execution from there. How would you achieve this using SQL transactions?
+
+4.If you were asked to develop a mechanism to handle errors gracefully during a complex sequence of database operations, what techniques would you employ to ensure that partial changes are rolled back while preserving the overall transaction?
+
+5.Imagine you need to insert a new order and update the total amount of an existing order simultaneously. How would you design your SQL script to handle potential errors during these operations, ensuring that the database remains consistent regardless of the outcome?
+
