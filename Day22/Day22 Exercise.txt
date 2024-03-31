@@ -1,0 +1,53 @@
+Day 22 Exercise:
+
+-- Table Creation
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50)
+);
+
+CREATE TABLE NewEmployees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50)
+);
+
+-- Insert Statements
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department)
+VALUES (1, 'John', 'Doe', 'HR'),
+       (2, 'Jane', 'Smith', 'IT'),
+       (3, 'Alice', 'Johnson', 'Marketing');
+
+INSERT INTO NewEmployees (EmployeeID, FirstName, LastName, Department)
+VALUES (4, 'Bob', 'Jones', 'Finance'),
+       (5, 'Sarah', 'Brown', 'HR'),
+       (6, 'Michael', 'Clark', 'IT');
+
+
+Questions:
+
+1.Perform a UNION operation on the Employees and NewEmployees tables to retrieve a list of all employees, including duplicates.
+
+2.Retrieve a list of all unique department names from both the Employees and NewEmployees tables using the UNION operator.
+
+3.How many total records will be retrieved if you use UNION ALL between the Employees and NewEmployees tables?
+
+4.Write a MERGE statement to update the Employees table with the records from the NewEmployees table based on matching EmployeeID. Ensure that if the EmployeeID exists in both tables, the Department is updated.
+
+5.What is the result if you execute the MERGE statement mentioned in question 4, assuming all syntax is correct?
+
+6.Modify the MERGE statement to insert new records from NewEmployees into Employees if the EmployeeID does not exist in the Employees table.
+
+7.In the MERGE statement, what conditions must be met for an UPDATE operation to occur on the Employees table?
+
+8.Discuss the performance implications of using MERGE compared to separate INSERT, UPDATE, and DELETE statements.
+
+9.Explain the difference between UNION and MERGE operations in SQL Server with suitable examples.
+
+Try to solve this by creating your own tables
+
+Suppose you have two tables, Orders and NewOrders, both with similar structures. Orders contains existing orders, and NewOrders contains new orders. Design and implement a solution using UNION and MERGE to update the Orders table with records from NewOrders, considering scenarios where some orders might need updating, some might need insertion, and some might remain unchanged.
+
