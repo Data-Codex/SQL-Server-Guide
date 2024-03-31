@@ -1,0 +1,109 @@
+Day 18 Exercise:
+
+-- Table creation scripts
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50)
+);
+
+CREATE TABLE Contractors (
+    ContractorID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50)
+);
+
+-- Insert statements
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department)
+VALUES (1, 'John', 'Doe', 'IT'),
+       (2, 'Jane', 'Smith', 'HR'),
+       (3, 'Alice', 'Jones', 'Finance'),
+       (4, 'Michael', 'Johnson', 'IT'),
+       (5, 'Sarah', 'Williams', 'HR'),
+       (6, 'Robert', 'Brown', 'Finance'),
+       (7, 'Emily', 'Davis', 'IT'),
+       (8, 'William', 'Wilson', 'Finance'),
+       (9, 'Olivia', 'Martinez', 'HR'),
+       (10, 'David', 'Anderson', 'IT');
+
+INSERT INTO Contractors (ContractorID, FirstName, LastName, Department)
+VALUES (1, 'Mike', 'Brown', 'IT'),
+       (2, 'Emily', 'Johnson', 'HR'),
+       (3, 'Tom', 'Wilson', 'Finance'),
+       (4, 'Jessica', 'Clark', 'IT'),
+       (5, 'Daniel', 'Lee', 'HR'),
+       (6, 'Emma', 'White', 'Finance'),
+       (7, 'James', 'Miller', 'IT'),
+       (8, 'Sophia', 'Thompson', 'Finance'),
+       (9, 'Alexander', 'Harris', 'HR'),
+       (10, 'Mia', 'Roberts', 'IT');
+
+
+--Questions:
+
+Note: The Expected Output provided doesn't contains all the records but a reference of few rows from the output.
+
+Question: Write a SQL query to display the unique names and departments of all employees and contractors.
+
+Expected Output:
+
+FirstName   | LastName  | Department
+-------------------------------------
+John        | Doe       | IT
+Jane        | Smith     | HR
+Alice       | Jones     | Finance
+Mike        | Brown     | IT
+Emily       | Johnson   | HR
+Tom         | Wilson    | Finance
+
+
+Question: Write a SQL query to find all names (including duplicates) and their departments.
+
+Expected Output:
+
+FirstName   | LastName  | Department
+-------------------------------------
+John        | Doe       | IT
+Jane        | Smith     | HR
+Alice       | Jones     | Finance
+Mike        | Brown     | IT
+Emily       | Johnson   | HR
+Tom         | Wilson    | Finance
+
+
+Question: How many records will be returned when using UNION compared to UNION ALL in the provided tables?
+
+Question: If we use UNION ALL on the provided tables, how many records would be returned in total?
+
+Question: Write a SQL query to display the unique departments among employees and contractors.
+
+Expected Output:
+
+FirstName   | LastName  | Department | Role
+-------------------------------------------
+John        | Doe       | IT         | Employee
+Jane        | Smith     | HR         | Employee
+Alice       | Jones     | Finance    | Employee
+Mike        | Brown     | IT         | Contractor
+Emily       | Johnson   | HR         | Contractor
+Tom         | Wilson    | Finance    | Contractor
+
+
+Question: What would happen if we swapped the positions of Employees and Contractors tables in the UNION query?
+
+Question: Write a SQL query to display the first name, last name, and department of employees and contractors, sorted by department in ascending order and then by last name in descending order.
+
+Expected Output:
+
+FirstName   | LastName  | Department
+-------------------------------------
+Jane        | Smith     | HR
+Emily       | Johnson   | HR
+John        | Doe       | IT
+Mike        | Brown     | IT
+Tom         | Wilson    | Finance
+Alice       | Jones     | Finance
+
+
