@@ -1,0 +1,55 @@
+Day 20 Exercise:
+
+
+--Table Creation Scripts:
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DepartmentID INT
+);
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+--INSERT Statements
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID) VALUES
+(1, 'John', 'Doe', 1),
+(2, 'Jane', 'Smith', 2),
+(3, 'Michael', 'Johnson', NULL),
+(4, 'Emily', 'Brown', 1),
+(5, 'David', 'Wilson', 3),
+(6, 'Sarah', 'Jones', NULL),
+(7, 'Robert', 'Lee', 2),
+(8, 'Jennifer', 'Garcia', 3),
+(9, 'William', 'Martinez', 1),
+(10, 'Jessica', 'Davis', NULL);
+
+INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
+(1, 'HR'),
+(2, 'IT'),
+(3, 'Finance'),
+(4,'Sales');
+ 	
+
+Qestions:
+
+1.Write a query to display all employees along with their department names using a LEFT JOIN.
+2.List all departments along with the names of employees who belong to each department using a RIGHT JOIN.
+3.Display the first and last names of all employees, including those who do not belong to any department, using a LEFT JOIN.
+4.Show the department names along with the number of employees in each department, including departments with no employees, using a RIGHT JOIN.
+5.Find the employees who do not belong to any department using a LEFT JOIN.
+6.List all departments and the number of employees in each department, including departments with no employees, using a RIGHT JOIN.
+7.Display the employee ID, first name, last name, and department name for all employees, including those who do not belong to any department, using a LEFT JOIN.
+8.Show the employee ID, first name, last name, and department name for all employees, including those without a department, using a RIGHT JOIN.
+9.List all employees and their corresponding department names, including those with no department assigned, using a LEFT JOIN.
+10.Display the department name and the number of employees in each department, including departments with no employees, using a RIGHT JOIN.
+
+11.Write a query to display the employee ID, first name, last name, and department name for all employees who belong to departments with names starting with 'H', including employees without a department, using a LEFT JOIN.
+
+12.List the department names along with the number of employees in each department, excluding departments with no employees, using a RIGHT JOIN. If a department has no employees, display '0' as the count.
+
+13.Display the employee ID, first name, last name, and department name for all employees. If an employee does not belong to any department, display 'Not Assigned' as the department name. Use a LEFT JOIN to achieve this.
