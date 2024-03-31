@@ -1,0 +1,30 @@
+Day 17 Exercise:
+
+-- Table creation script
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+-- Insert sample data
+INSERT INTO Employees (EmployeeID, EmployeeName, Department, Salary) VALUES
+(1, 'John Doe', 'HR', 50000.00),
+(2, 'Jane Smith', 'Finance', 60000.00),
+(3, 'Michael Johnson', 'IT', 70000.00),
+(4, 'Emily Brown', 'HR', 55000.00),
+(5, 'David Lee', 'IT', 65000.00);
+
+ Exercise questions
+ Question 1: Retrieve all employee's names and their salaries.
+ Question 2: Calculate the average salary of all employees.
+ Question 3: Assign a unique sequential number to each employee based on their salary in descending order.
+ Question 4: Find the highest salary among all employees.
+ Question 5: Calculate the difference between each employee's salary and the average salary of all employees.
+ Question 6: Calculate the cumulative salary for each employee within their department.
+ Question 7: Find the rank of each employee based on their salary in descending order.
+ Question 8: Calculate the running total of salaries for all employees ordered by their EmployeeID.
+ Question 9: Identify the highest salary within each department.
+ Question 10: Calculate the moving average salary for each employee based on the previous two employees' salaries.
+
