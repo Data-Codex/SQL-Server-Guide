@@ -1,0 +1,66 @@
+-- Create tables
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    DepartmentID INT
+);
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName NVARCHAR(50)
+);
+
+-- Insert sample data into Employees
+INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID)
+VALUES
+    (1, 'John', 'Doe', 1),
+    (2, 'Jane', 'Smith', 2),
+    (3, 'Alice', 'Johnson', 1),
+    (4, 'Bob', 'Brown', NULL);
+
+-- Insert sample data into Departments
+INSERT INTO Departments (DepartmentID, DepartmentName)
+VALUES
+    (1, 'Sales'),
+    (2, 'Marketing'),
+    (3, 'HR');
+
+-- Create table for window function exercise
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    OrderAmount DECIMAL(10, 2)
+);
+
+-- Insert sample data into Orders
+INSERT INTO Orders (OrderID, CustomerID, OrderDate, OrderAmount)
+VALUES
+    (1, 101, '2024-01-01', 100.00),
+    (2, 102, '2024-01-02', 150.00),
+    (3, 103, '2024-01-03', 200.00),
+    (4, 101, '2024-01-04', 120.00),
+    (5, 102, '2024-01-05', 180.00),
+    (6, 103, '2024-01-06', 220.00),
+    (7, 101, '2024-01-07', 130.00),
+    (8, 102, '2024-01-08', 160.00),
+    (9, 103, '2024-01-09', 240.00),
+    (10, 101, '2024-01-10', 140.00);
+
+
+Qestions:
+
+1.List all employees and their departments using an INNER JOIN.
+2.Display all employees, including those without a department, using a FULL OUTER JOIN.
+3.Retrieve the total number of employees in each department.
+4.Find the employee(s) with the highest salary in each department.
+5.Calculate the average salary for each department.
+6.List all departments along with the total number of employees and the average salary, ordered by the average salary in descending order.
+7.Calculate the cumulative sum of orders by order date.
+8.Rank employees based on their total order amount in descending order.
+9.Calculate the running total order amount for each customer.
+10.Find the nth highest order amount for each customer, where n = 2.
+11.Retrieve the top 3 departments with the highest average order amount per employee, considering only departments with at least 2 employees.
+12.Identify any departments where all employees have placed at least one order, displaying department details and the number of employees.
+13.Find the employee(s) who have not placed any orders, along with their department details if applicable.
