@@ -1,0 +1,54 @@
+--Day 23 Exercise:
+
+-- Table Creation
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,
+    SaleDate DATE,
+    Amount DECIMAL(10, 2),
+    ProductID INT
+);
+
+-- Insert Statements
+INSERT INTO Sales (SaleID, SaleDate, Amount, ProductID)
+VALUES (1, '2024-01-01', 100.00, 101),
+       (2, '2024-01-05', 150.00, 102),
+       (3, '2024-01-10', 200.00, 101),
+       (4, '2024-01-15', 120.00, 103),
+       (5, '2024-01-20', 180.00, 102),
+       (6, '2024-01-25', 220.00, 103),
+       (7, '2024-01-30', 160.00, 101),
+       (8, '2024-02-05', 190.00, 102),
+       (9, '2024-02-10', 130.00, 103),
+       (10, '2024-02-15', 170.00, 101);
+
+--Questions:
+
+1. LEAD Basic Usage:
+   Use the LEAD function to retrieve the next SaleDate after each sale in the Sales table.
+
+2. LEAD with Default Value:
+   Modify the query from question 1 to use the LEAD function with a default value of 'N/A' for the last sale.
+
+3. LEAD with Partitioning:
+   Partition the data by ProductID and use the LEAD function to find the next SaleDate for each product.
+
+4. LEAD with Offset:
+   Find the SaleDate that occurred two sales after each sale in the Sales table using the LEAD function.
+
+5. LAG Basic Usage:
+   Use the LAG function to retrieve the previous SaleDate before each sale in the Sales table.
+
+6. LAG with Default Value:
+   Modify the query from question 5 to use the LAG function with a default value of 'N/A' for the first sale.
+
+7. LAG with Partitioning:
+   Partition the data by ProductID and use the LAG function to find the previous SaleDate for each product.
+
+8. LAG with Offset:
+   Find the SaleDate that occurred two sales before each sale in the Sales table using the LAG function.
+
+9. LEAD and LAG with Aggregate Functions:
+   Use LEAD and LAG functions along with aggregate functions to calculate the difference in Amount between consecutive sales.
+
+10. Scenario-based Application:
+    Suppose you have a table containing stock prices with columns for Date and Price. Design and implement a query using LEAD and LAG functions to find the percentage change in price from one day to the next.
