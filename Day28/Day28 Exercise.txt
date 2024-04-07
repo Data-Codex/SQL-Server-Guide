@@ -1,0 +1,55 @@
+--Day 28 Exercise:
+
+-- Table Creation
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+-- Insert Statements
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES (1, 'John', 'Doe', 'HR', 50000.00),
+       (2, 'Jane', 'Smith', 'IT', 60000.00),
+       (3, 'Alice', 'Johnson', 'Marketing', 55000.00),
+       (4, 'Bob', 'Jones', 'Finance', 62000.00),
+       (5, 'Sarah', 'Brown', 'HR', 48000.00),
+       (6, 'Michael', 'Clark', 'IT', 65000.00),
+       (7, 'Emily', 'Taylor', 'Marketing', 52000.00),
+       (8, 'David', 'Williams', 'Finance', 60000.00),
+       (9, 'Jessica', 'Miller', 'HR', 51000.00),
+       (10, 'Andrew', 'Anderson', 'IT', 63000.00);
+
+--Exercise Questions:
+
+1. DENSE_RANK Basics:
+   Write a query to calculate the dense rank of employees based on their salaries.
+
+2. DENSE_RANK with Partition:
+   Calculate the dense rank of employees within each department based on their salaries.
+
+3. DENSE_RANK with ORDER BY:
+   Retrieve the top 3 highest-paid employees along with their dense rank.
+
+4. NTILE Basics:
+   Divide the employees into four equal groups based on their salaries using the `NTILE` function.
+
+5. NTILE with Different Group Counts:
+   Divide the employees into three equal groups based on their salaries using the `NTILE` function.
+
+6. NTILE with ORDER BY:
+   Determine which employees fall into the second quartile of salaries, including their details and NTILE rank.
+
+7. Combining NTILE and DENSE_RANK:
+   Compare the distribution of employees based on salary using both NTILE and DENSE_RANK functions.
+
+8. Handling Ties with DENSE_RANK:
+   Discuss how ties in salary affect the calculation of dense rank and how it differs from NTILE.
+
+9. Analyzing Quartiles:
+   Calculate the salary quartiles for the employees and discuss their significance in data analysis.
+
+10. Scenario-based Application:
+    Imagine you're analyzing employee performance based on their salaries. Design and implement a query using both DENSE_RANK and NTILE to identify the top-performing employees in each quartile.
