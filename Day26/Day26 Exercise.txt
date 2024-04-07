@@ -1,0 +1,68 @@
+--Day 26 Exercise:
+
+-- Table Creation
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    Price DECIMAL(10, 2)
+);
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    ProductID INT,
+    Quantity INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2)
+);
+
+-- Insert Statements
+INSERT INTO Products (ProductID, ProductName, Category, Price)
+VALUES (1, 'Laptop', 'Electronics', 1200.00),
+       (2, 'Mobile Phone', 'Electronics', 800.00),
+       (3, 'Desk', 'Furniture', 300.00),
+       (4, 'Tablet', 'Electronics', 600.00),
+       (5, 'Chair', 'Furniture', 150.00),
+       (6, 'Headphones', 'Electronics', 100.00),
+       (7, 'Bookshelf', 'Furniture', 250.00);
+
+INSERT INTO Orders (OrderID, ProductID, Quantity, OrderDate, TotalAmount)
+VALUES (1, 1, 2, '2024-03-01', 2400.00),
+       (2, 2, 3, '2024-03-05', 2400.00),
+       (3, 3, 1, '2024-03-10', 300.00),
+       (4, 4, 2, '2024-03-12', 1200.00),
+       (5, 5, 4, '2024-03-15', 600.00),
+       (6, 6, 3, '2024-03-20', 300.00),
+       (7, 7, 1, '2024-03-25', 250.00),
+       (8, 1, 1, '2024-03-28', 1200.00),
+       (9, 2, 2, '2024-03-30', 1600.00),
+       (10, 3, 3, '2024-04-01', 900.00),
+       (11, 4, 1, '2024-04-05', 600.00),
+       (12, 5, 2, '2024-04-10', 300.00),
+       (13, 6, 4, '2024-04-15', 400.00),
+       (14, 7, 3, '2024-04-20', 750.00),
+       (15, 1, 2, '2024-04-25', 2400.00);
+
+--Questions:
+
+
+1. Write an SQL query to retrieve all products from the Products table where the price is greater than $1000. If no products meet this condition, display a message "No products found."
+
+2. Use a CASE statement to categorize products in the Products table as 'Expensive' if the price is greater than $1000, 'Affordable' if the price is between $500 and $1000, and 'Cheap' if the price is less than $500. Display ProductID, ProductName, Category, and Price along with the categorized label.
+
+3. Implement a nested CASE statement to categorize products in the Products table based on their category. If the category is 'Electronics,' label it as 'Tech Product'; if the category is 'Furniture,' label it as 'Home Product'; otherwise, label it as 'Other.'
+
+4. Calculate the total quantity of products ordered from the Orders table where the OrderDate is after '2024-03-03' using a conditional aggregation.
+
+5. Write an SQL query to retrieve all orders along with the ProductName from the Products table where the TotalAmount of the order is greater than $500.
+
+6. List all products from the Products table that have at least one order associated with them in the Orders table.
+
+7. Retrieve all products from the Products table that have no associated orders in the Orders table.
+
+8. Update the Orders table to set the TotalAmount to NULL where the Quantity is less than or equal to 0.
+
+9. Display the ProductName and TotalAmount from the Orders table. If TotalAmount is NULL, replace it with 0.
+
+10. Implement an SQL query to calculate the discount for each product. If the price of the product is greater than $1000, apply a 10% discount; otherwise, apply a 5% discount.
+
