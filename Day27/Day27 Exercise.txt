@@ -1,0 +1,55 @@
+--Day 27 Exercise:
+
+-- Table Creation
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Score INT
+);
+
+-- Insert Statements
+INSERT INTO Students (StudentID, FirstName, LastName, Score)
+VALUES (1, 'John', 'Doe', 85),
+       (2, 'Jane', 'Smith', 90),
+       (3, 'Alice', 'Johnson', 75),
+       (4, 'Bob', 'Jones', 88),
+       (5, 'Sarah', 'Brown', 92),
+       (6, 'Michael', 'Clark', 80),
+       (7, 'Emily', 'Davis', 85),
+       (8, 'David', 'Wilson', 78),
+       (9, 'Emma', 'Martinez', 95),
+       (10, 'James', 'Taylor', 85);
+
+--Questions:
+
+
+1. ROW_NUMBER Basics:
+   Write a query to assign a unique row number to each student in the Students table, ordering them by StudentID.
+
+2. ROW_NUMBER with Partition:
+   Partition the students based on their scores and assign a row number within each partition, ordering them by descending score.
+
+3. ROW_NUMBER with ORDER BY:
+   Use ROW_NUMBER to rank students based on their scores, ordering them by descending score.
+
+4. RANK vs ROW_NUMBER:
+   Explain the difference between RANK and ROW_NUMBER functions with suitable examples.
+
+5. RANK with PARTITION BY:
+   Rank students based on their scores, partitioning them by their score, and ordering them by descending score within each partition.
+
+6. Ranking Ties:
+   How does RANK handle ties in scores among students? Provide an example.
+
+7. ROW_NUMBER Performance:
+   Discuss the performance implications of using ROW_NUMBER compared to RANK, especially when dealing with large datasets.
+
+8. ROW_NUMBER Usage:
+   Describe a scenario where you would use ROW_NUMBER in a real-world SQL query.
+
+9. Ranking with Conditions:
+   Rank students who scored above 80 points, ordering them by descending score.
+
+10. Scenario-based Application:
+    Suppose you have a table containing sales data with columns like ProductID, SaleAmount, and SaleDate. Design and implement a query using ROW_NUMBER or RANK to identify the top 5 highest sales amounts for each product, ordering them by SaleAmount.
