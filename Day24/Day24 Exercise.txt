@@ -1,0 +1,76 @@
+--Day 24 Exercise:
+
+-- Table Creation
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(50),
+    Category VARCHAR(50),
+    Price DECIMAL(10,2)
+);
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    ProductID INT,
+    Quantity INT,
+    OrderDate DATE,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Insert Statements
+INSERT INTO Products (ProductID, ProductName, Category, Price)
+VALUES (1, 'Laptop', 'Electronics', 1200.00),
+       (2, 'Smartphone', 'Electronics', 800.00),
+       (3, 'T-shirt', 'Apparel', 20.00),
+       (4, 'Jeans', 'Apparel', 50.00),
+       (5, 'Headphones', 'Electronics', 100.00),
+       (6, 'Backpack', 'Accessories', 40.00);
+
+INSERT INTO Orders (OrderID, ProductID, Quantity, OrderDate)
+VALUES (1, 1, 2, '2024-03-01'),
+       (2, 2, 1, '2024-03-02'),
+       (3, 3, 3, '2024-03-03'),
+       (4, 4, 2, '2024-03-04'),
+       (5, 2, 2, '2024-03-05'),
+       (6, 3, 1, '2024-03-06'),
+       (7, 1, 1, '2024-03-07'),
+       (8, 5, 3, '2024-03-08'),
+       (9, 6, 2, '2024-03-09'),
+       (10, 4, 1, '2024-03-10'),
+       (11, 3, 2, '2024-03-11'),
+       (12, 2, 3, '2024-03-12'),
+       (13, 1, 2, '2024-03-13'),
+       (14, 6, 1, '2024-03-14');
+
+--Question:
+
+
+1. Write a subquery to retrieve the ProductID of the product with the highest price.
+
+2. Use a subquery to find all orders where the product category is 'Electronics'.
+
+3. Find the total quantity of products ordered for the most expensive product.
+
+4. Write a correlated subquery to find all products whose price is higher than the average price of all products.
+
+5. Insert a new order into the Orders table for the product with the lowest price.
+
+6. Update the price of all products in the Apparel category to be 10% higher than the average price of all products in that category.
+
+7. Delete all orders where the quantity is less than the average quantity of all orders.
+
+8. Use a nested subquery to find the ProductID of the product with the second-highest price.
+
+9. Retrieve all products along with the total quantity ordered for each product.
+
+10. Find all categories with an average price greater than $50.
+
+Write a query to retrieve the ProductID, ProductName, and Price of all products whose price is higher than the average price of products in the Electronics category.
+
+Find all employees who have placed orders, along with their total number of orders.
+
+Retrieve the top 5 highest-paid employees from each department, including their department name and salary.
+
+Find all departments where the average salary of employees is higher than the overall average salary of all employees, and also, the total number of employees in the department is more than 10.
+
+For each product, calculate the percentage of total revenue it contributes to, considering only products whose revenue exceeds 10% of the total revenue generated from all products.
+
