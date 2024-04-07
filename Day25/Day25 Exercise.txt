@@ -1,0 +1,63 @@
+--Day 25 Exercise:
+
+-- Table Creation
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DepartmentID INT,
+    ManagerID INT,
+    Salary DECIMAL(10, 2),
+    HireDate DATE,
+    CONSTRAINT FK_Department FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID),
+    CONSTRAINT FK_Manager FOREIGN KEY (ManagerID) REFERENCES Employees(EmployeeID)
+);
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+-- Insert Statements for Employees with Managers
+INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID, ManagerID, Salary, HireDate)
+VALUES (1, 'John', 'Doe', 1, NULL, 50000, '2018-03-15'),    -- John Doe is the manager of HR
+       (2, 'Jane', 'Smith', 1, 1, 60000, '2019-05-20'),     -- Jane Smith works in HR department, reports to John Doe
+       (3, 'Alice', 'Johnson', 2, NULL, 55000, '2020-01-10'),  -- Alice Johnson is the manager of IT
+       (4, 'Bob', 'Jones', 2, 3, 65000, '2017-09-05'),      -- Bob Jones works in IT department, reports to Alice Johnson
+       (5, 'Sarah', 'Brown', 1, 1, 52000, '2019-11-30'),    -- Sarah Brown also works in HR, reports to John Doe
+       (6, 'Michael', 'Clark', 2, 3, 62000, '2018-07-25'),  -- Michael Clark works in IT, reports to Alice Johnson
+       (7, 'Emily', 'Davis', 1, 1, 48000, '2019-03-20'),    -- Emily Davis also works in HR, reports to John Doe
+       (8, 'William', 'Taylor', 3, NULL, 58000, '2018-12-12'), -- William Taylor is the manager of Marketing
+       (9, 'Olivia', 'Wilson', 2, 3, 55000, '2020-02-28'),  -- Olivia Wilson works in IT, reports to Alice Johnson
+       (10, 'James', 'Anderson', 4, NULL, 70000, '2019-07-10'); -- James Anderson is the manager of Finance
+
+-- Insert Statements for Departments
+INSERT INTO Departments (DepartmentID, DepartmentName)
+VALUES (1, 'HR'),
+       (2, 'IT'),
+       (3, 'Marketing'),
+       (4, 'Finance'),
+       (5, 'Sales'),
+       (6, 'Operations');
+
+Certainly! Here are 10 complex programming questions that can be solved using SQL queries based on the provided tables:
+
+1. Retrieve the hierarchical structure of departments and their respective employees, showing the department name, manager name, and employee names in each department.
+
+2. Find the departments where the salary of the highest-paid employee is at least twice the salary of the lowest-paid employee.
+
+3. List all departments along with the count of employees in each department, including those with no employees.
+
+4. Identify the top 10% of employees with the highest salaries across all departments.
+
+5. Analyze the average salary trend for each department over the past three years, assuming there's a timestamp column indicating when each employee's salary was last updated.
+
+6. Calculate the total annual expenditure of each department, considering the salaries of all employees.
+
+7. Determine the employees who are managers (i.e., they have employees reporting to them) and list their manager names and the count of employees reporting to each of them.
+
+8. Find the employees who have been with the company for more than five years, along with their department and tenure in years.
+
+9. Calculate the percentage increase in salary for each employee compared to the previous year, assuming there's a timestamp column indicating when each employee's salary was last updated.
+
+10. Identify employees who have worked in multiple departments over their tenure with the company, and list their names along with the departments they've worked in.
