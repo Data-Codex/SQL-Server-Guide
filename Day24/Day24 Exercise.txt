@@ -64,13 +64,13 @@ VALUES (1, 1, 2, '2024-03-01'),
 
 10. Find all categories with an average price greater than $50.
 
-Write a query to retrieve the ProductID, ProductName, and Price of all products whose price is higher than the average price of products in the Electronics category.
+11. Write a query to retrieve the ProductID, ProductName, and Price of all products whose price is higher than the average price of products in the Electronics category.
 
-Find all employees who have placed orders, along with their total number of orders.
+12. Find all employees who have placed orders, along with their total number of orders.
 
-Retrieve the top 5 highest-paid employees from each department, including their department name and salary.
+13. Retrieve the top 5 highest-paid employees from each department, including their department name and salary.
 
-Find all departments where the average salary of employees is higher than the overall average salary of all employees, and also, the total number of employees in the department is more than 10.
+14. Find all departments where the average salary of employees is higher than the overall average salary of all employees, and also, the total number of employees in the department is more than 10.
 
-For each product, calculate the percentage of total revenue it contributes to, considering only products whose revenue exceeds 10% of the total revenue generated from all products.
+15. For each product, calculate the percentage of total revenue it contributes to, considering only products whose revenue exceeds 10% of the total revenue generated from all products.
 
