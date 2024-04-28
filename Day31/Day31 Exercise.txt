@@ -1,0 +1,97 @@
+--Day31 Exercise
+
+--Table creation script
+
+-- Create Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    EmployeeType VARCHAR(20),
+    Department VARCHAR(50),
+    ContractStatus VARCHAR(20),
+    ManagerID INT,
+    CONSTRAINT FK_Manager_Employee FOREIGN KEY (ManagerID) REFERENCES Employees(EmployeeID) ON DELETE SET NULL
+);
+
+-- Create EmployeeDeletionsAudit table for logging deletions
+CREATE TABLE EmployeeDeletionsAudit (
+    AuditID INT PRIMARY KEY,
+    EmployeeID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DeletionTimestamp DATETIME,
+    DeletedByUser VARCHAR(50)
+);
+
+-- Create Managers table for managing manager-subordinate relationships
+CREATE TABLE Managers (
+    ManagerID INT PRIMARY KEY,
+    ManagerName VARCHAR(100),
+    SubordinateCount INT
+);
+
+-- Create Tasks table related to employees (for scenario 1)
+CREATE TABLE Tasks (
+    TaskID INT PRIMARY KEY,
+    TaskName VARCHAR(100),
+    EmployeeID INT,
+    CONSTRAINT FK_Employee_Task FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID) ON DELETE CASCADE
+);
+
+-- Create Departments table (for scenario 5)
+CREATE TABLE Departments (
+    DepartmentName VARCHAR(50) PRIMARY KEY
+);
+
+-- Populate Departments table with sample data
+INSERT INTO Departments (DepartmentName)
+VALUES ('Sales'), ('Engineering'), ('Finance'), ('HR');
+
+-- Create EmployeesArchive table for archiving deleted employee records (for scenario 7)
+CREATE TABLE EmployeesArchive (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    EmployeeType VARCHAR(20),
+    Department VARCHAR(50),
+    ContractStatus VARCHAR(20),
+    ManagerID INT,
+    DeletionTimestamp DATETIME
+);
+
+-- Create additional tables as needed for scenario-specific data
+
+-- Example: Create a table for HR notifications (for scenario 9)
+CREATE TABLE HRNotifications (
+    NotificationID INT PRIMARY KEY,
+    NotificationMessage VARCHAR(255),
+    NotificationDate DATETIME,
+    Recipient VARCHAR(100)
+);
+
+
+--Insert values for the tables 
+
+--Questions
+
+Scenario 1: Cascading Deletions
+Implement a delete trigger that ensures when an employee record is deleted from the Employees table, all related records (e.g., associated tasks or assignments) in other tables are also deleted to maintain data consistency.
+Scenario 2: Audit Logging for Deletions
+Create a delete trigger that logs deleted records from the Employees table into an audit table (EmployeeDeletionsAudit). The trigger should capture details such as the employee ID, name, deletion timestamp, and user performing the deletion.
+Scenario 3: Preventing Critical Deletions
+Develop a delete trigger that prevents the deletion of employee records marked as 'Permanent Staff' (EmployeeType = 'Permanent') in the Employees table. If a delete operation targets such records, the trigger should raise an error.
+Scenario 4: Managing Manager-Subordinate Relationships
+Implement a delete trigger that updates the SubordinateCount in the Managers table when an employee record is deleted. The trigger should decrement the subordinate count of the corresponding manager for the deleted employee.
+Scenario 5: Preventing Orphaned Data
+Create a delete trigger that prevents the deletion of records from a Departments table if there are still associated employees (Employees table) assigned to those departments. If deletion is attempted, the trigger should roll back the operation and raise an error.
+Scenario 6: Handling Contract Terminations
+Develop a delete trigger that updates the ContractStatus field of employees when their records are deleted from the Employees table. Set the ContractStatus to 'Terminated' upon deletion.
+Scenario 7: Archiving Deleted Records
+Implement a delete trigger that moves deleted records from the Employees table to an archive table (EmployeesArchive) for historical purposes. The trigger should transfer the deleted record along with metadata (e.g., deletion timestamp).
+Scenario 8: Cross-Table Cleanup
+Create a delete trigger that cleans up related records in other tables (e.g., tasks assigned to a deleted employee) when an employee record is deleted from the Employees table. Ensure proper cascading deletes or cleanup operations.
+Scenario 9: Notification on Deletions
+Develop a delete trigger that sends notifications (e.g., email alerts) to relevant stakeholders (e.g., HR department) when critical employee records are deleted from the Employees table.
+Scenario 10: Preventing Data Loss
+Implement a delete trigger that prevents accidental deletions by requiring confirmation or authorization (e.g., additional check or approval) before executing a delete operation on certain records.
