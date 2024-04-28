@@ -1,0 +1,99 @@
+--Day29 Exercise
+
+--Table creation script
+
+-- Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DepartmentID INT,
+    Salary DECIMAL(10, 2),
+    EmailAddress VARCHAR(100),
+    HireDate DATE,
+    ManagerID INT
+);
+
+-- Departments table for department lookup
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+-- Audit table for logging insertions
+CREATE TABLE EmployeeAudit (
+    AuditID INT PRIMARY KEY,
+    EmployeeID INT,
+    ActionDate DATETIME,
+    ActionType VARCHAR(50),
+    ActionBy VARCHAR(100)
+);
+
+-- Managers table for manager assignment
+CREATE TABLE Managers (
+    ManagerID INT PRIMARY KEY,
+    ManagerName VARCHAR(100),
+    DepartmentID INT
+);
+
+-- HolidayBonus table for holiday bonus configuration
+CREATE TABLE HolidayBonus (
+    HolidayMonth INT PRIMARY KEY,
+    BonusAmount DECIMAL(10, 2)
+);
+
+-- Headcount table to track departmental staff counts
+CREATE TABLE Headcount (
+    DepartmentID INT PRIMARY KEY,
+    StaffCount INT
+);
+
+-- Populate Departments table with sample data
+INSERT INTO Departments (DepartmentID, DepartmentName)
+VALUES (1, 'Engineering'),
+       (2, 'Sales'),
+       (3, 'Marketing'),
+       (4, 'Finance');
+
+-- Populate Managers table with sample data
+INSERT INTO Managers (ManagerID, ManagerName, DepartmentID)
+VALUES (101, 'John Doe', 1),
+       (102, 'Jane Smith', 2),
+       (103, 'Mike Johnson', 3);
+
+-- Populate HolidayBonus table with sample data
+INSERT INTO HolidayBonus (HolidayMonth, BonusAmount)
+VALUES (12, 1000); -- December bonus
+
+-- Populate Headcount table with initial staff counts
+INSERT INTO Headcount (DepartmentID, StaffCount)
+VALUES (1, 10),
+       (2, 8),
+       (3, 6),
+       (4, 5);
+
+
+Create an Insert trigger and insert 20 rows into this Employee table along with this create a Salary table and when ever a employee got inserted into this table then a random salary needs to be inserted into the Salary table along with the Employeeid
+
+--Questions
+
+Scenario 1: Salary Validation
+Implement an insert trigger that prevents inserting records into the Employees table where the Salary is negative. If an attempt is made to insert such a record, the trigger should raise an error.
+Scenario 2: Department Capitalization
+Create an insert trigger that automatically capitalizes the Department field when inserting new records into the Employees table. For example, if someone tries to insert "sales" as a department, it should be stored as "Sales".
+Scenario 3: Auto-Generation of Employee ID
+Develop an insert trigger that automatically assigns a unique EmployeeID (starting from 1000) to new records being inserted into the Employees table. Ensure that this trigger handles concurrent inserts safely.
+Scenario 4: Audit Logging
+Implement an insert trigger that logs each new insertion into an audit table (EmployeeAudit) along with the timestamp of the insertion and the user performing the insert.
+Scenario 5: Cross-Table Validation
+Create an insert trigger that checks if a new employee record belongs to a valid department (lookup from a Departments table). If the department doesn't exist, prevent the insertion and log the error.
+Scenario 6: Salary Adjustment
+Develop an insert trigger that automatically adjusts the Salary of new records based on the department. For instance, all employees in the "Engineering" department receive a 10% bonus.
+Scenario 7: Email Domain Validation
+Implement an insert trigger that verifies the email address (EmailAddress) format for new employees. Only allow email addresses with a valid domain (e.g., @example.com).
+Scenario 8: Manager Assignment
+Create an insert trigger that automatically assigns a default manager (ManagerID) based on the department when a new employee is inserted. Managers should be senior employees in the same department.
+Scenario 9: Holiday Bonus
+Develop an insert trigger that checks the hire date of new employees. If the hire date falls within a specific holiday month (e.g., December), automatically add a holiday bonus to their salary.
+Scenario 10: Cross-Table Update
+Implement an insert trigger that updates related tables when a new employee is inserted. For instance, if an employee is added, update a Headcount table to reflect the increase in staff for that department.
