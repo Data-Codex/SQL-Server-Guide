@@ -1,0 +1,80 @@
+--Day30 Exercise
+
+--Table creation scripts
+
+-- Create Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2),
+    ApprovalStatus VARCHAR(20),
+    ManagerID INT,
+    SeniorityLevel VARCHAR(20),
+    EmailAddress VARCHAR(100),
+    ContractEndDate DATE,
+    ContractStatus VARCHAR(20),
+    PerformanceRating VARCHAR(20),
+    BonusPercentage DECIMAL(5, 2)
+);
+
+-- Create SalaryChangesAudit table for logging salary changes
+CREATE TABLE SalaryChangesAudit (
+    AuditID INT PRIMARY KEY,
+    EmployeeID INT,
+    OldSalary DECIMAL(10, 2),
+    NewSalary DECIMAL(10, 2),
+    ChangeDate DATETIME
+);
+
+-- Create Managers table for managing manager-subordinate relationships
+CREATE TABLE Managers (
+    ManagerID INT PRIMARY KEY,
+    ManagerName VARCHAR(100),
+    SubordinateCount INT
+);
+
+-- Create an example table for cross-referencing departments
+CREATE TABLE Departments (
+    DepartmentName VARCHAR(50) PRIMARY KEY
+);
+
+-- Populate Departments table with sample data
+INSERT INTO Departments (DepartmentName)
+VALUES ('Sales'), ('Engineering'), ('Finance'), ('HR');
+
+-- Create additional tables as needed for scenario-specific data
+
+-- Example: Create a table for HR notifications
+CREATE TABLE HRNotifications (
+    NotificationID INT PRIMARY KEY,
+    EmployeeID INT,
+    NotificationMessage VARCHAR(255),
+    NotificationDate DATETIME
+);
+
+--Insert desired values into each table
+
+--Questions
+
+Scenario 1: Salary Validation
+Implement an insert trigger that prevents inserting records into the Employees table where the Salary is negative. If an attempt is made to insert such a record, the trigger should raise an error.
+Scenario 2: Department Capitalization
+Create an insert trigger that automatically capitalizes the Department field when inserting new records into the Employees table. For example, if someone tries to insert "sales" as a department, it should be stored as "Sales".
+Scenario 3: Auto-Generation of Employee ID
+Develop an insert trigger that automatically assigns a unique EmployeeID (starting from 1000) to new records being inserted into the Employees table. Ensure that this trigger handles concurrent inserts safely.
+Scenario 4: Audit Logging
+Implement an insert trigger that logs each new insertion into an audit table (EmployeeAudit) along with the timestamp of the insertion and the user performing the insert.
+Scenario 5: Cross-Table Validation
+Create an insert trigger that checks if a new employee record belongs to a valid department (lookup from a Departments table). If the department doesn't exist, prevent the insertion and log the error.
+Scenario 6: Salary Adjustment
+Develop an insert trigger that automatically adjusts the Salary of new records based on the department. For instance, all employees in the "Engineering" department receive a 10% bonus.
+Scenario 7: Email Domain Validation
+Implement an insert trigger that verifies the email address (EmailAddress) format for new employees. Only allow email addresses with a valid domain (e.g., @example.com).
+Scenario 8: Manager Assignment
+Create an insert trigger that automatically assigns a default manager (ManagerID) based on the department when a new employee is inserted. Managers should be senior employees in the same department.
+Scenario 9: Holiday Bonus
+Develop an insert trigger that checks the hire date of new employees. If the hire date falls within a specific holiday month (e.g., December), automatically add a holiday bonus to their salary.
+Scenario 10: Cross-Table Update
+Implement an insert trigger that updates related tables when a new employee is inserted. For instance, if an employee is added, update a Headcount table to reflect the increase in staff for that department.
