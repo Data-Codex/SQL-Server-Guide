@@ -1,0 +1,108 @@
+--Day34 Exercise
+
+--Table creation scripts
+
+-- Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DepartmentID INT,
+    Salary DECIMAL(10, 2),
+    EmailAddress VARCHAR(100),
+    HireDate DATE,
+    ManagerID INT
+);
+
+-- Departments table for department lookup
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+-- EmployeeHierarchy table for hierarchical relationships
+CREATE TABLE EmployeeHierarchy (
+    EmployeeID INT PRIMARY KEY,
+    ManagerID INT
+);
+
+-- EmployeeAudit table for audit logging
+CREATE TABLE EmployeeAudit (
+    AuditID INT PRIMARY KEY,
+    EmployeeID INT,
+    ActionDate DATETIME,
+    ActionType VARCHAR(50),
+    ActionBy VARCHAR(100)
+);
+
+-- DepartmentPerformance table for department-wise performance metrics
+CREATE TABLE DepartmentPerformance (
+    DepartmentID INT PRIMARY KEY,
+    TotalSalary DECIMAL(12, 2),
+    AverageSalary DECIMAL(10, 2),
+    EmployeeCount INT
+);
+
+-- EmployeeSearchCriteria table for dynamic search parameters
+CREATE TABLE EmployeeSearchCriteria (
+    SearchCriteriaID INT PRIMARY KEY,
+    CriteriaName VARCHAR(50),
+    CriteriaType VARCHAR(50)
+);
+
+-- EmployeeTransactionLog table for advanced transaction management
+CREATE TABLE EmployeeTransactionLog (
+    TransactionID INT PRIMARY KEY,
+    TransactionDate DATETIME,
+    TransactionType VARCHAR(50),
+    TransactionStatus VARCHAR(50)
+);
+
+-- HistoricalEmployeeData table for time-based analysis
+CREATE TABLE HistoricalEmployeeData (
+    EmployeeID INT,
+    RecordDate DATE,
+    Salary DECIMAL(10, 2),
+    TerminationDate DATE
+);
+
+-- PerformanceMetrics table for employee performance scores
+CREATE TABLE PerformanceMetrics (
+    EmployeeID INT,
+    PerformanceYear INT,
+    PerformanceScore DECIMAL(5, 2)
+);
+
+-- CustomReportDefinition table for custom report generation
+CREATE TABLE CustomReportDefinition (
+    ReportID INT PRIMARY KEY,
+    ReportName VARCHAR(100),
+    Criteria1 VARCHAR(50),
+    Criteria2 VARCHAR(50),
+    Criteria3 VARCHAR(50)
+);
+
+--Insert values for all the tables
+
+--Questions
+
+1. Complex Data Aggregation:
+Develop a stored procedure that accepts a department name as input and returns a report with aggregated statistics, including total salary expenditure, average salary, and employee count for that department.
+2. Hierarchical Data Retrieval:
+Create a stored procedure that recursively retrieves all employees and their subordinates (manager-subordinate relationships) within a specified department, presenting the data in a hierarchical structure.
+3. Dynamic Search and Filtering:
+Design a stored procedure that accepts dynamic search criteria (e.g., employee name, department, salary range) as input parameters and returns filtered results based on the provided criteria.
+4. Pivot and Unpivot Operations:
+Implement a stored procedure that dynamically pivots or unpivots data from multiple tables to generate a customized report, such as a summary of department-wise employee counts and salaries.
+5. Complex Data Validation and Insertion:
+Develop a stored procedure that performs complex data validation checks (e.g., cross-table validations, business rule validations) before inserting new records into multiple related tables atomically.
+6. Advanced Transaction Management:
+Create a stored procedure that manages a multi-step transaction involving updates to multiple tables, with rollback capabilities in case of errors or failures at any stage of the transaction.
+7. Time-Based Data Analysis:
+Design a stored procedure that analyzes historical data within a specified time range (e.g., monthly or yearly) and generates trend analysis reports, such as employee turnover rates or salary changes over time.
+8. Complex Join and Aggregation:
+Develop a stored procedure that performs complex joins and aggregations across multiple tables to calculate metrics like department-wise employee performance scores based on various criteria.
+9. Bulk Data Processing:
+Implement a stored procedure that efficiently processes bulk data operations (e.g., bulk updates, deletions, or inserts) using optimized batch processing techniques to improve performance and scalability.
+10. Custom Report Generation:
+Design a stored procedure that generates custom reports based on user-defined parameters, allowing users to specify criteria such as date ranges, departments, and specific data fields to include in the report output.
