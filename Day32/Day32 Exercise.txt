@@ -1,0 +1,77 @@
+--Day32 Exercise
+
+--Table creation scripts
+
+-- Create SchemaChangesAudit table for logging schema changes (Scenario 1)
+CREATE TABLE SchemaChangesAudit (
+    AuditID INT PRIMARY KEY,
+    ChangeType VARCHAR(50),
+    TableName VARCHAR(100),
+    ChangeTimestamp DATETIME,
+    ChangedByUser VARCHAR(50)
+);
+
+-- Create StoredProcedureChangesAudit table for auditing stored procedure changes (Scenario 5)
+CREATE TABLE StoredProcedureChangesAudit (
+    AuditID INT PRIMARY KEY,
+    ProcedureName VARCHAR(100),
+    ChangeType VARCHAR(50),
+    ChangeTimestamp DATETIME,
+    ChangedByUser VARCHAR(50)
+);
+
+-- Create a table for managing authorized users (Scenario 8)
+CREATE TABLE AuthorizedUsers (
+    UserID INT PRIMARY KEY,
+    UserName VARCHAR(50),
+    Role VARCHAR(50)
+);
+
+-- Populate AuthorizedUsers table with sample data
+INSERT INTO AuthorizedUsers (UserID, UserName, Role)
+VALUES (1, 'admin', 'DBA'), (2, 'developer', 'Developer');
+
+-- Create additional tables as needed for scenario-specific data
+
+-- Example: Create a table for tracking database backups (Scenario 7)
+CREATE TABLE DatabaseBackups (
+    BackupID INT PRIMARY KEY,
+    BackupTimestamp DATETIME,
+    BackupType VARCHAR(50),
+    BackupLocation VARCHAR(255),
+    TriggeredByUser VARCHAR(50)
+);
+
+-- Create additional tables as needed for DDL trigger actions and logging
+
+-- Example: Create a table to store critical tables that cannot be deleted (Scenario 2)
+CREATE TABLE CriticalTables (
+    TableName VARCHAR(100) PRIMARY KEY
+);
+
+-- Populate CriticalTables table with critical table names
+INSERT INTO CriticalTables (TableName)
+VALUES ('Employees'), ('Orders'), ('Customers');
+
+--Insert desired values for all the tables
+
+--Questions
+
+Scenario 1: Audit Table Schema Changes
+Implement a DDL trigger that logs any schema changes made to tables (e.g., table creation, alteration) into an audit table (SchemaChangesAudit). Capture details such as the type of change, affected table name, timestamp, and user who performed the change.
+Scenario 2: Preventing Table Deletion
+Create a DDL trigger that prevents the deletion of specific critical tables (e.g., Employees, Orders) in the database. If a table deletion is attempted, the trigger should roll back the operation and raise an error.
+Scenario 3: Enforcing Naming Conventions
+Develop a DDL trigger that enforces naming conventions for newly created tables. For example, ensure that all table names start with a specific prefix (e.g., "tbl_") and raise an error if the naming convention is violated.
+Scenario 4: Tracking Index Modifications
+Implement a DDL trigger that tracks modifications to indexes (e.g., creation, alteration) within the database. Log details such as index name, type of modification, timestamp, and user who made the change.
+Scenario 5: Capturing Stored Procedure Changes
+Create a DDL trigger that captures changes made to stored procedures (e.g., creation, alteration, deletion) and logs these changes into a dedicated audit table (StoredProcedureChangesAudit).
+Scenario 6: Restricting Data Type Changes
+Develop a DDL trigger that restricts changes to specific data types (e.g., DECIMAL to VARCHAR) within table definitions. If a prohibited data type change is attempted, prevent the modification and raise an error.
+Scenario 7: Automated Backup on Schema Changes
+Implement a DDL trigger that automatically triggers a database backup when schema changes are made (e.g., table creation, modification). Ensure that the backup captures the state of the database before the schema change.
+Scenario 8: Preventing Unauthorized Schema Modifications
+Create a DDL trigger that restricts schema modifications to authorized users or roles only. If an unauthorized user attempts to alter the schema, roll back the operation and log the unauthorized attempt.
+Scenario 9: Enforcing Constraints on Table Alterations
+Implement a DDL trigger that enforces specific constraints (e.g., foreign key constraints) on table alterations. Ensure that any alterations comply with predefined rules to maintain data integrity.
