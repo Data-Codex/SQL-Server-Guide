@@ -1,0 +1,78 @@
+--Day33 Exercise
+
+--Table craetion script
+
+CREATE TABLE SalesData (
+    ProductID INT,
+    ProductName VARCHAR(50),
+    SaleMonth INT,
+    SaleYear INT,
+    SalesAmount DECIMAL(10, 2)
+);
+
+CREATE TABLE SurveyResponses (
+    RespondentID INT,
+    QuestionID INT,
+    QuestionText VARCHAR(100),
+    Response VARCHAR(50)
+);
+
+CREATE TABLE SalesData (
+    ProductID INT,
+    ProductName VARCHAR(50),
+    SalesAmount DECIMAL(10, 2),
+    UnitsSold INT,
+    Revenue DECIMAL(10, 2)
+);
+
+CREATE TABLE OrderData (
+    OrderID INT,
+    ProductID INT,
+    Quantity INT,
+    IsHighValue BIT
+);
+
+CREATE TABLE EmployeeDetails (
+    EmployeeID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    AddressLine1 VARCHAR(100),
+    AddressLine2 VARCHAR(100),
+    City VARCHAR(50),
+    State VARCHAR(50)
+);
+
+-- Insert values inside these tables
+
+--Questions
+
+Scenario 1: Sales Pivot
+You have a table SalesData containing sales information for different products and months. Use pivot to transform this data into a format where each product's sales are displayed as columns for each month.
+
+Scenario 2: Dynamic Pivot for Aggregate Data
+Create a stored procedure that accepts a category as a parameter and dynamically pivots sales data for that category, showing total sales by month across different years.
+
+Scenario 3: Cross-Tabulation of Survey Data
+You have survey response data stored in a normalized format. Use unpivot to transform this data into a cross-tabulated format where each question is represented as a column, and each row represents a respondent's answer.
+
+Scenario 4: Multiple Aggregates with Pivot
+Aggregate sales data by product and month, then use pivot to display total sales, average sales, and maximum sales for each product across different months.
+
+Scenario 5: Unpivot for Multiple Measures
+You have a denormalized table containing sales data with columns for different measures (e.g., SalesAmount, UnitsSold, Revenue). Use unpivot to transform this data into a normalized format.
+
+Scenario 6: Pivot with Dynamic Column Names
+Create a pivot query where the column names (e.g., months) are dynamically determined based on the data, not hard-coded in the query.
+
+Scenario 7: Using Pivot with Conditional Aggregates
+Apply conditional logic within a pivot operation to calculate aggregates based on specific conditions (e.g., count of orders meeting certain criteria).
+
+Scenario 8: Unpivot with Multiple Columns
+Transform data stored in wide format (multiple columns representing different attributes) into a long format using unpivot, preserving additional metadata.
+
+Scenario 9: Calculated Columns in Pivot
+Include calculated columns (e.g., growth rate) within a pivot operation to display both raw data and derived metrics in the pivoted result.
+
+Scenario 10: Handling Missing Values with Unpivot
+Use unpivot to handle sparse data (missing values) by replacing NULLs or default values during the transformation process.
+
