@@ -1,0 +1,117 @@
+--Day35 Exercise
+
+--Use these table creation scripts for the scenario based questions
+
+-- Scenario 1: String Manipulation
+CREATE TABLE Strings (
+    StringID INT PRIMARY KEY,
+    InputString VARCHAR(100)
+);
+
+-- Scenario 2: Date Calculation
+CREATE TABLE Persons (
+    PersonID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    BirthDate DATE
+);
+
+-- Scenario 3: Business Logic Calculation
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Salary DECIMAL(10, 2),
+    HireDate DATE
+);
+
+-- Scenario 4: Data Validation
+CREATE TABLE EmailAddresses (
+    EmailID INT PRIMARY KEY,
+    EmailAddress VARCHAR(100)
+);
+
+-- Scenario 5: Currency Conversion
+CREATE TABLE CurrencyRates (
+    CurrencyID INT PRIMARY KEY,
+    CurrencyName VARCHAR(50),
+    ExchangeRate DECIMAL(10, 4)
+);
+
+-- Scenario 6: Geospatial Calculation
+CREATE TABLE Locations (
+    LocationID INT PRIMARY KEY,
+    Latitude DECIMAL(9, 6),
+    Longitude DECIMAL(9, 6)
+);
+
+-- Scenario 7: Inventory Management
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    QuantityInStock INT
+);
+
+-- Scenario 8: Complex Aggregation
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,
+    ProductID INT,
+    SaleAmount DECIMAL(10, 2)
+);
+
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    CategoryID INT
+);
+
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(50)
+);
+
+-- Scenario 9: Data Transformation
+-- Assuming raw data source tables
+
+-- Scenario 10: Recursive Computation
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    ManagerID INT  -- Foreign key to self (recursive relationship)
+);
+
+
+--Insert values for each tables
+
+--Questions
+
+Scenario 1: String Manipulation
+Design a function that takes a string input and returns the string with each word capitalized (title case). For example, input "hello world" should return "Hello World".
+
+Scenario 2: Date Calculation
+Develop a function that calculates the age of a person based on their birthdate. The function should return the age in years.
+
+Scenario 3: Business Logic Calculation
+Create a function that determines the bonus amount based on an employee's salary and years of service. The bonus calculation should consider different rules based on the employee's tenure.
+
+Scenario 4: Data Validation
+Design a function that checks if an email address is valid based on a specified format (e.g., contains "@" and ".").
+
+Scenario 5: Currency Conversion
+Implement a function that converts an amount from one currency to another based on the current exchange rate. The function should accept the amount, source currency, and target currency as parameters.
+
+Scenario 6: Geospatial Calculation
+Develop a function that calculates the distance between two geographical coordinates (latitude and longitude) using the Haversine formula.
+
+Scenario 7: Inventory Management
+Create a function that checks the available quantity of a product in inventory and determines if it's in stock based on a specified threshold.
+
+Scenario 8: Complex Aggregation
+Design a function that performs a complex aggregation across multiple tables and returns a summarized result (e.g., total sales by product category).
+
+Scenario 9: Data Transformation
+Develop a function that transforms raw data into a specific format or structure based on predefined rules (e.g., converting a flat file into a hierarchical format).
+
+Scenario 10: Recursive Computation
+Implement a function that calculates a hierarchical structure (e.g., organizational hierarchy) using recursion. The function should traverse through the hierarchy and perform computations based on parent-child relationships.
