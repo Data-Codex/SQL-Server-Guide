@@ -1,0 +1,35 @@
+--Day37 Exercise
+
+--Create Tables for the Questions if required
+
+--Questions:
+
+Scenario 1: Recursive Hierarchy
+   Implement a stored procedure using recursive `CTE` (Common Table Expression) or a `WHILE` loop to traverse a hierarchical data structure (e.g., organizational chart, bill of materials) and perform operations like calculating total salaries or navigating through parent-child relationships.
+
+Scenario 2: Data Cleansing
+   Create a script that iterates through a table using a cursor to identify and correct data anomalies (e.g., removing leading/trailing spaces, standardizing formats) based on specific criteria or patterns.
+
+Scenario 3: Batch Processing
+   Develop a process that iteratively processes large datasets in manageable batches using `WHILE` loops, updating or inserting records while ensuring minimal impact on system resources.
+
+Scenario 4: Complex Calculations
+   Implement a stored procedure to perform complex iterative calculations (e.g., financial projections, Monte Carlo simulations) where each iteration depends on the results of the previous iteration.
+
+Scenario 5: Dynamic SQL Generation
+   Build a script that dynamically generates and executes SQL statements for tasks like creating or modifying database objects based on certain conditions or metadata stored in tables.
+
+Scenario 6: Temporal Data Analysis
+   Use a looping statement to analyze temporal data (e.g., time series) by processing data in sequential intervals (e.g., days, months) and aggregating statistics or identifying trends over time.
+
+Scenario 7: Sequential Order Processing
+   Develop a script to process orders sequentially (e.g., order fulfillment workflow) by iterating through orders in a specific sequence based on priority, customer status, or other criteria.
+
+Scenario 8: Hierarchical Report Generation
+   Create a stored procedure that generates hierarchical reports (e.g., organizational structure, nested categories) using recursive `CTE` or iterative techniques to assemble data into a tree-like format.
+
+Scenario 9: String Manipulation
+   Write a script that iteratively parses and manipulates string data (e.g., splitting, concatenating) to transform complex text structures into normalized formats.
+
+Scenario 10: Dynamic Pivot Table Generation
+    Develop a script to dynamically generate pivot tables based on varying input data, iterating through distinct values to pivot and aggregate data for reporting purposes.
