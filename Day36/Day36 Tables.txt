@@ -1,0 +1,180 @@
+--Day36 Table Creation scripts
+
+--Insert some sample values for all the tables
+
+Scenario 1: Sales Performance Analysis
+-- Products table
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    UnitPrice DECIMAL(10, 2)
+);
+
+-- Customers table
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(100),
+    Address VARCHAR(200),
+    City VARCHAR(50),
+    Country VARCHAR(50)
+);
+
+-- Orders table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2),
+    CONSTRAINT FK_Orders_Customers FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+-- OrderDetails table
+CREATE TABLE OrderDetails (
+    OrderDetailID INT PRIMARY KEY,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT,
+    UnitPrice DECIMAL(10, 2),
+    CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    CONSTRAINT FK_OrderDetails_Products FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+
+Scenario 2: Employee Hierarchy View
+-- Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(100),
+    DepartmentID INT,
+    ManagerID INT,
+    CONSTRAINT FK_Employees_Departments FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID),
+    CONSTRAINT FK_Employees_Manager FOREIGN KEY (ManagerID) REFERENCES Employees(EmployeeID)
+);
+
+
+Scenario 3: Inventory Status Dashboard
+-- Products table (for inventory)
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    StockQuantity INT,
+    ReorderLevel INT
+);
+
+-- Warehouses table
+CREATE TABLE Warehouses (
+    WarehouseID INT PRIMARY KEY,
+    WarehouseName VARCHAR(100),
+    Location VARCHAR(200)
+);
+
+-- Inventory table
+CREATE TABLE Inventory (
+    ProductID INT,
+    WarehouseID INT,
+    Quantity INT,
+    CONSTRAINT PK_Inventory PRIMARY KEY (ProductID, WarehouseID),
+    CONSTRAINT FK_Inventory_Products FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    CONSTRAINT FK_Inventory_Warehouses FOREIGN KEY (WarehouseID) REFERENCES Warehouses(WarehouseID)
+);
+
+
+Scenario 4: Customer Segmentation
+-- Customers table
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(100),
+    Age INT,
+    Gender VARCHAR(10),
+    TotalSpend DECIMAL(10, 2),
+    LastPurchaseDate DATE
+);
+
+
+
+Scenario 5: Financial Performance Dashboard
+-- FinancialData table
+CREATE TABLE FinancialData (
+    Year INT,
+    Month INT,
+    Revenue DECIMAL(15, 2),
+    Expenses DECIMAL(15, 2),
+    Profit DECIMAL(15, 2)
+);
+
+
+
+Scenario 6: Geographic Sales Analysis
+-- Sales table with geography
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,
+    ProductID INT,
+    SaleDate DATE,
+    Quantity INT,
+    Amount DECIMAL(15, 2),
+    Country VARCHAR(50),
+    State VARCHAR(50),
+    City VARCHAR(50),
+    CONSTRAINT FK_Sales_Products FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+
+Scenario 7: Event Logging and Analysis
+-- EventLogs table
+CREATE TABLE EventLogs (
+    LogID INT PRIMARY KEY,
+    EventType VARCHAR(50),
+    EventDate DATETIME,
+    UserID INT,
+    Details VARCHAR(200)
+);
+
+
+Scenario 8: Customer Lifetime Value (CLV) Calculation
+-- CustomerTransactions table
+CREATE TABLE CustomerTransactions (
+    TransactionID INT PRIMARY KEY,
+    CustomerID INT,
+    TransactionDate DATE,
+    Amount DECIMAL(15, 2)
+);
+
+-- CustomerRetention table
+CREATE TABLE CustomerRetention (
+    CustomerID INT PRIMARY KEY,
+    JoinDate DATE,
+    LastPurchaseDate DATE
+);
+
+
+
+Scenario 9: Social Media Sentiment Analysis
+-- SocialMediaInteractions table
+CREATE TABLE SocialMediaInteractions (
+    InteractionID INT PRIMARY KEY,
+    UserID INT,
+    InteractionDate DATETIME,
+    InteractionType VARCHAR(50),
+    Content VARCHAR(500)
+);
+
+
+
+Scenario 10: Product Recommendation Engine
+-- ProductViews table
+CREATE TABLE ProductViews (
+    ViewID INT PRIMARY KEY,
+    CustomerID INT,
+    ProductID INT,
+    ViewDate DATETIME
+);
+
+-- ProductPurchases table
+CREATE TABLE ProductPurchases (
+    PurchaseID INT PRIMARY KEY,
+    CustomerID INT,
+    ProductID INT,
+    PurchaseDate DATE
+);

@@ -1,0 +1,36 @@
+--Day36 Exercise
+
+--Questions:
+
+Creating complex scenarios for views in SQL Server involves designing views that address specific business needs or analytical requirements. Below are 10 complex scenarios that demonstrate the use of views for data retrieval, aggregation, and filtering based on different business scenarios:
+
+Scenario 1: Sales Performance Analysis
+   Design a view that aggregates sales data from multiple tables (e.g., Orders, Products, Customers) to provide a monthly summary of sales revenue, quantity sold, and average order value. Include filters to analyze sales performance by product category or customer segment.
+
+Scenario 2: Employee Hierarchy View
+   Create a hierarchical view that represents the organizational structure of employees based on their reporting relationships (e.g., manager-subordinate hierarchy). Include columns like EmployeeID, EmployeeName, ManagerID, and Level to visualize the organizational chart.
+
+Scenario 3: Inventory Status Dashboard
+   Develop a view that shows real-time inventory status across multiple warehouses, including product availability, stock levels, and reorder quantities. Incorporate calculated fields to identify items that require restocking or have reached critical levels.
+
+Scenario 4: Customer Segmentation
+   Build a view that segments customers based on their purchase behavior, demographic information, and transaction history. Use clustering algorithms or predefined business rules to assign customers into segments (e.g., loyal customers, occasional buyers, high spenders).
+
+Scenario 5: Financial Performance Dashboard
+   Design a view that integrates financial data (e.g., revenue, expenses, profits) from various accounting tables to generate a comprehensive financial performance dashboard. Include comparative analysis (e.g., year-over-year growth, variance analysis) using calculated fields.
+
+Scenario 6: Geographic Sales Analysis
+   Create a view that aggregates sales data by geographical regions (e.g., countries, states) to visualize sales trends on a map. Incorporate spatial functions to calculate distance-based metrics or nearest neighbors for targeted marketing campaigns.
+
+Scenario 7: Event Logging and Analysis
+   Develop a view that combines event log data (e.g., user actions, system events) with contextual information to facilitate event analysis and troubleshooting. Include filters for specific event types, timestamps, or affected entities.
+
+Scenario 8: Customer Lifetime Value (CLV) Calculation
+   Build a view that calculates the customer lifetime value (CLV) based on historical purchase data and customer retention metrics. Use predictive analytics to estimate future CLV and identify high-value customers for personalized marketing strategies.
+
+Scenario 9: Social Media Sentiment Analysis
+   Design a view that integrates social media data (e.g., comments, likes, shares) with sentiment analysis results to monitor brand perception and customer sentiment. Apply text mining techniques to categorize sentiment (positive, negative, neutral).
+
+Scenario 10: Product Recommendation Engine
+    Develop a view that generates personalized product recommendations for customers based on their purchase history, browsing behavior, and similar customer preferences. Utilize collaborative filtering or machine learning algorithms to suggest relevant products.
+
