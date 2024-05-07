@@ -1,0 +1,33 @@
+--Day 39 Exercise 
+
+--Create Tables and insert the required Data for each Questions
+
+Scenario 1: Dynamic Search Criteria
+   Implement a stored procedure that accepts input parameters for search criteria (e.g., product name, category) and dynamically constructs a SQL query to retrieve matching records from a product catalog table.
+
+Scenario 2: Parameterized Pivot Table
+   Create a dynamic query that generates a pivot table based on user-selected columns and aggregation functions. Allow users to specify pivot fields and aggregate functions as input parameters.
+
+Scenario 3: Flexible Report Generation
+   Develop a reporting tool that allows users to define report parameters (e.g., date range, customer segment) dynamically. Construct SQL queries dynamically based on selected parameters to generate customized reports.
+
+Scenario 4: Multi-Step Data Processing
+   Build a script using variables to store intermediate results during complex data transformations (e.g., ETL process). Use dynamic SQL to execute multiple steps of data processing based on variable values.
+
+Scenario 5: Conditional Business Logic
+   Implement a stored procedure with conditional business logic based on input parameters. Use variables to store intermediate results and dynamically adjust query behavior based on runtime conditions.
+
+Scenario 6: Dynamic Table Join
+   Create a dynamic query that constructs table joins based on user-defined relationships or metadata. Use variables to specify join conditions dynamically at runtime.
+
+Scenario 7: Batch Update Using Dynamic Criteria
+   Develop a script that performs batch updates on a table based on dynamic criteria specified by user parameters. Use variables to build dynamic update statements targeting specific rows.
+
+Scenario 8: Customized Data Export
+   Design a procedure that generates customized data exports based on user preferences. Use dynamic SQL to include or exclude specific columns and apply custom formatting rules based on variable inputs.
+
+Scenario 9: Parameterized Data Validation
+   Implement a script to validate data integrity using dynamic queries and input parameters. Use variables to store validation rules and dynamically generate SQL statements to identify and correct data anomalies.
+
+Scenario 10: Dynamic Index Maintenance
+    Build a script that performs index maintenance tasks (e.g., rebuild, reorganize) based on variable input parameters such as fragmentation level or index usage statistics. Use dynamic SQL to generate and execute index maintenance commands dynamically.
